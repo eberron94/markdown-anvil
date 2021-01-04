@@ -1,0 +1,65 @@
+[quote]
+
+[section:feat]Curse of the Lycanthrope[/section][section:trait]curse[/section][section:trait]necromancy[/section][section:trait]primal[/section]
+
+[p]
+
+This curse affects only humanoids. Saving Throws Fortitude DC based on your level minus 1 (see DCs by Level table).
+
+[b]Critical Success[/b] You are not cursed.
+
+[b]Success[/b] You are cursed, but it can be removed by the Remove Curse spell. If it is not removed before the next full moon, you instead count as having failed.
+
+[b]Failure[/b] You are cursed. The Remove Curse spell allows the caster to take the Remove Lycanthropy action.
+
+[b]Critical Failure[/b] You are cursed. Only Wolfsbane can remove the curse.
+
+[/p]
+
+[section:feat]Remove Lycanthropy[/section][section:trait]concentrate[/section][section:trait]primal[/section][section:trait]emotional[/section][section:trait]mental[/section]
+
+[p]
+
+[b]Requirement[/b] You casted Remove Curse on a creature with the Curse of the Lycanthrope and are trained in Nature.
+
+The curse is loosened by your spell, but still connected. Make a Nature check with a DC equal to the Saving Throw of the curse.
+
+[b]Critical Success[/b] You remove the curse.
+
+[b]Success[/b] The cursed creature can make a new Saving Throw, with a +2 circumstance bonus.
+
+[b]Failure[/b] The curse is not removed. But you can choose to transfer the curse to yourself. If you do, you do not make a Saving Throw, instead you are treated as having a Critical Failure.
+
+[b]Critical Failure[/b] The curse is not removed and you contract the Curse of the Lycanthrope (you can make a Saving Throw).
+
+[/p]
+
+[/quote]
+
+[quote]
+
+[h2]Eberron and the 12 moons[/h2]
+
+[p]
+
+There are 12 moons in the world of Eberron. Each curse is connected to a specific moon, but the other moons have some effect on you. You gain an additional ability with Lycanthrope Dedication.
+
+[/p]
+
+[section:feat]Lesser Moon Frenzy[/section][section:trait]polymorph[/section][section:trait]primal[/section][section:trait]transmutation[/section]
+
+[p]
+
+When a full moon appears in the night sky that is not your primary moon, you must make Saving Throws Fortitude with a DC based on your level minus 1 (see DCs by Level table).
+
+[b]Critical Success[/b] You do not need to Change Shape into hybrid form. If you are in hybrid form, you can control your actions for 1 minute, after which you must make a new Saving Throw.
+
+[b]Success[/b] As Critical Success, but you can only control your actions for 1 round.
+
+[b]Failure[/b] You must enter hybrid form. While in hybrid form, you cannot control your actions for 1 minute, after which you must make a new Saving Throw.
+
+[b]Critical Failure[/b] As failure, but you cannot control your actions for 1 hour.
+
+[/p]
+
+[/quote]

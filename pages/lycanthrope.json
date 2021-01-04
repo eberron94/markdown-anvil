@@ -4,8 +4,40 @@
     "content": [
         { "type": "md-feat", "file": "dedication" },
         {
+            "type": "quote",
+            "entries": [{ "type": "md-feat", "file": "change-shape" }]
+        },
+
+        {
             "type": "md-feat-group",
-            "files": ["moon-blessing", "swift-beast"]
+            "files": [
+                "additional-movement",
+                "beast-form",
+                "beast-sprint",
+                "fast-change",
+                "lunar-regeneration",
+                "moon-blessing",
+                "raging-beast",
+                "sensitive-ears",
+                "strong-nose",
+                "true-lycanthrope"
+            ]
+        }
+    ],
+    "footContent": [
+        {
+            "type": "quote",
+            "entries": [
+                { "type": "md-feat", "file": "curse" },
+                { "type": "md-feat", "file": "remove-lycanthropy" }
+            ]
+        },
+        {
+            "type": "quote",
+            "entries": [
+                { "type": "md", "file": "eberron" },
+                { "type": "md-feat", "file": "lesser-moon-frenzy" }
+            ]
         }
     ]
 }

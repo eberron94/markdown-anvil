@@ -1,0 +1,42 @@
+{
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "files.autoSave": "afterDelay",
+    "javascript.preferences.quoteStyle": "single",
+    "js-index.quotes": "single",
+    "macros": {
+        "hyperFormat": [
+            "sortJSON.sortJSON",
+            "editor.action.organizeImports",
+            "editor.action.formatDocument"
+        ]
+    },
+    "prettier.arrowParens": "avoid",
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.useEditorConfig": false,
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "mdx",
+        "javascript",
+        "json"
+    ],
+    "spellright.language": ["en"],
+    "spellright.parserByClass": {
+        "mdx": {
+            "parser": "plain"
+        }
+    },
+    "surround.custom": {
+        "bold": {
+            "description": "surround with bold",
+            "label": "mdx bold",
+            "snippet": "**$TM_SELECTED_TEXT$0**"
+        }
+    },
+    "typescript.preferences.quoteStyle": "single"
+}
