@@ -1,0 +1,55 @@
+[section:feat]Lycanthrope Dedication[right]Feat 2[/right][/section][section:trait-rare]rare[/section]
+
+[section:trait]lycanthrope[/section][section:trait]archetype[/section][section:trait]dedication[/section]
+
+[p]
+
+[b]Archetype[/b] Lycanthrope
+
+[b]Access[/b] Inflicted with the Curse of the Lycanthrope
+
+blah blah blah
+
+blah blah blah
+
+blah blah blah
+
+blah blah blah
+
+blah blah blah
+
+blah blah blah
+
+blah blah blah
+
+blah blah blah
+
+[/p]
+
+[section:feat]Moon's Blessing[right]Feat 4[/right][/section]
+
+[section:trait]lycanthrope[/section][section:trait]archetype[/section]
+
+[p]
+
+[b]Archetype[/b] Lycanthrope
+
+[b]Access[/b] Lycanthrope Dedication
+
+Temp HP
+
+[/p]
+
+[section:feat]Swift Beast[right]Feat 4[/right][/section]
+
+[section:trait]lycanthrope[/section][section:trait]archetype[/section]
+
+[p]
+
+[b]Archetype[/b] Lycanthrope
+
+[b]Access[/b] Lycanthrope Dedication
+
+[b]Go fast[/b]
+
+[/p]

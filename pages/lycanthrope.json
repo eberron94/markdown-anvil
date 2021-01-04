@@ -1,0 +1,11 @@
+{
+    "outputFolder": "lycanthrope",
+    "folderPrefix": "lycanthrope",
+    "content": [
+        { "type": "md-feat", "file": "dedication" },
+        {
+            "type": "md-feat-group",
+            "files": ["moon-blessing", "swift-beast"]
+        }
+    ]
+}

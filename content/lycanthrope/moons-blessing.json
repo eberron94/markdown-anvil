@@ -1,0 +1,10 @@
+{
+    "metadata": {},
+    "content": {
+        "entries": [
+            "hello",
+            "world",
+            { "type": "p", "entries": ["dog", "cat"] }
+        ]
+    }
+}
