@@ -7,7 +7,6 @@
             "type": "quote",
             "entries": [{ "type": "md-feat", "file": "change-shape" }]
         },
-
         {
             "type": "md-feat-group",
             "files": [
@@ -39,5 +38,6 @@
                 { "type": "md-feat", "file": "lesser-moon-frenzy" }
             ]
         }
-    ]
+    ],
+    "sideContent": [{ "type": "md", "file": "more-animals" }]
 }
