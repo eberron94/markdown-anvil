@@ -1,0 +1,23 @@
+{
+    "outputFolder": "wandslinger",
+    "folderPrefix": "wandslinger",
+    "content": [
+        { "type": "md-feat", "file": "dedication" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "wandslinger",
+                "wand-shot",
+                "wandcrafter",
+                "gentle-overcharging",
+                "wand-flourish",
+                "wand-draw",
+                "advanced-wandcrafter",
+                "aggressive-overcharging",
+                "wand-master"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

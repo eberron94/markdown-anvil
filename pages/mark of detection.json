@@ -1,0 +1,27 @@
+{
+    "outputFolder": "detection",
+    "folderPrefix": "dragonmark/mark-of-detection",
+    "content": [
+        { "type": "md-feat", "file": "dedication" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "./dragonmark/greater-dragonmark",
+                "./dragonmark/grand-dragonmark",
+                "./dragonmark/lesser-dragonmark",
+                "shadow-sight",
+                "dark-sight",
+                "expanded-detection",
+                "scrying-sense-familiarity",
+                "scrying-sense-competence",
+                "scrying-sense-expert",
+                "medani-prophet",
+                "prophetic-vision",
+                "medani-guidance",
+                "vision-of-the-past"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

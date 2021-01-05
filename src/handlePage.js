@@ -43,17 +43,17 @@ const template = (block, folderPrefix, markdown, json) => {
 
     switch (type) {
         case 'md':
-            const mdFile = markdown[`${folderPrefix}/${file}`];
+            const mdFile = markdown[getPath(folderPrefix, file)];
             lines.push(getMarkdownGeneric(mdFile));
             break;
         case 'md-feat':
-            const mdFeatFile = markdown[`${folderPrefix}/${file}`];
+            const mdFeatFile = markdown[getPath(folderPrefix, file)];
             lines.push(getMarkdownFeat(mdFeatFile));
             break;
         case 'md-group':
         case 'md-feat-group':
             const mdFeatFileList = files
-                .map(f => markdown[`${folderPrefix}/${f}`])
+                .map(f => markdown[getPath(folderPrefix, f)])
                 .sort(sortFeat);
             lines.push(mdFeatFileList.map(getMarkdownFeat));
             break;
@@ -90,6 +90,15 @@ const template = (block, folderPrefix, markdown, json) => {
     }
 
     return flatten(lines);
+};
+
+const getPath = (folder, file) => {
+    let x = `${folder}/${file}`;
+    if (file.startsWith('.')) {
+        x = file.replace(/\.+\//, '');
+    }
+    console.log('loading file', x);
+    return x;
 };
 
 const sortFeat = ({ metadata: a }, { metadata: b }) => {
@@ -174,7 +183,9 @@ const getMetadataHeaderTitle = ({ title, heading }) => {
     return [`[h${headingLevel}]${title}[/h${headingLevel}]`];
 };
 
-const getMetadataContent = ({ access, prereq, req, archetype }) => {
+const getMetadataContent = ({ access, prereq, req, archetype,
+    frequency,
+    trigger, }) => {
     const lines = [];
 
     //Build remaining strings
@@ -191,6 +202,14 @@ const getMetadataContent = ({ access, prereq, req, archetype }) => {
         lines.push(`[b]Prerequisites[/b] ${prereq}`);
     }
 
+    if (trigger && typeof trigger === 'string') {
+        lines.push(`[b]Trigger[/b] ${trigger}`);
+    }
+
+    if (frequency && typeof frequency === 'string') {
+        lines.push(`[b]Frequency[/b] ${frequency}`);
+    }
+
     if (req && typeof req === 'string') {
         lines.push(`[b]Requirement[/b] ${req}`);
     }
@@ -198,33 +217,47 @@ const getMetadataContent = ({ access, prereq, req, archetype }) => {
     return lines;
 };
 
-const getMarkdownGeneric = ({ metadata, content }) => {
-    return [
-        getMetadataHeaderTitle(metadata),
-        '[p]',
-        getMetadataContent(metadata),
-        markdownToWorldAnvil(content).trim(),
-        '[/p]',
-    ];
+const getMarkdownGeneric = data => {
+    try {
+        const { metadata, content } = data;
+        return [
+            getMetadataHeaderTitle(metadata),
+            '[p]',
+            getMetadataContent(metadata),
+            markdownToWorldAnvil(content).trim(),
+            '[/p]',
+        ];
+    } catch (e) {
+        console.log(e.message);
+    }
+
+    return [];
 };
 
-const getMarkdownFeat = ({ metadata, content }) => {
-    return [
-        getMetadataFeatTitle(metadata),
-        '[p]',
-        getMetadataContent(metadata),
-        markdownToWorldAnvil(content).trim(),
-        '[/p]',
-    ];
+const getMarkdownFeat = data => {
+    try {
+        const { metadata, content } = data;
+        return [
+            getMetadataFeatTitle(metadata),
+            '[p]',
+            getMetadataContent(metadata),
+            markdownToWorldAnvil(content).trim(),
+            '[/p]',
+        ];
+    } catch (e) {
+        console.log(e.message);
+    }
+
+    return [];
 };
 
 const markdownToWorldAnvil = starStr => {
     let str = starStr.trim();
-    str = str.replace(/\*\*\*([^\*]+)\*\*\*/g, '[b][i]$1[/i][/b]');
+    str = str.replace(/\*\*\*([^\*\n]+)\*\*\*/g, '[b][i]$1[/i][/b]');
 
-    str = str.replace(/\*\*([^\*]+)\*\*/g, '[b]$1[/b]');
+    str = str.replace(/\*\*([^\*\n]+)\*\*/g, '[b]$1[/b]');
 
-    str = str.replace(/\*([^\*]+)\*/g, '[i]$1[/i]');
+    str = str.replace(/\*([^\*\n]+)\*/g, '[i]$1[/i]');
 
     str = str.replace(/\r+\n+/g, '\n');
     str = str.replace(/\xa0+/g, ' ');
