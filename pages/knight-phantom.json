@@ -1,0 +1,21 @@
+{
+    "outputFolder": "knight-phantom",
+    "folderPrefix": "knight-phantom",
+    "content": [
+        { "type": "md-feat", "file": "dedication" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "aspect-of-the-phantom",
+                "fast-mount",
+                "greater-mount",
+                "loyal-steed",
+                "regal-mount",
+                "saddle-up",
+                "superior-mount"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}
