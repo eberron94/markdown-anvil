@@ -1,0 +1,7 @@
+{
+    "outputFolder": "language",
+    "folderPrefix": "language",
+    "content": [{ "type": "md", "file": "language" },{ "type": "md-feat", "file": "galifren" }],
+    "footContent": [],
+    "sideContent": []
+}

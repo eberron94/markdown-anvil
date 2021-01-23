@@ -5,6 +5,7 @@
         { "type": "md-feat", "file": "dedication" },
         {
             "type": "md-feat-group",
+            "levelHeaders": false,
             "files": [
                 "aspect-of-the-phantom",
                 "fast-mount",

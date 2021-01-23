@@ -38,7 +38,7 @@ const template = (block, folderPrefix, markdown, json) => {
         }
         return [];
     }
-    const { type, file, files, entries } = block;
+    const { type, file, files, entries, levelHeaders = false } = block;
     let lines = [];
 
     switch (type) {
@@ -55,7 +55,21 @@ const template = (block, folderPrefix, markdown, json) => {
             const mdFeatFileList = files
                 .map(f => markdown[getPath(folderPrefix, f)])
                 .sort(sortFeat);
-            lines.push(mdFeatFileList.map(getMarkdownFeat));
+            if (levelHeaders) {
+                const level20 = new Array(20).fill(0);
+                level20.forEach((_, lv) => {
+                    let levelList = mdFeatFileList.filter(
+                        e => e.metadata.level === lv
+                    );
+                    if (levelList.length) {
+                        lines.push(`[h2]Level ${lv}[/h2]`);
+                        lines.push(levelList.map(getMarkdownFeat));
+                    }
+                });
+            } else {
+                lines.push(mdFeatFileList.map(getMarkdownFeat));
+            }
+
             break;
         case 'json-feat':
             //TODO
@@ -174,6 +188,10 @@ const getMetadataFeatTitle = ({
 };
 
 const getMetadataHeaderTitle = ({ title, heading }) => {
+    if(!title){
+        return [];
+    }
+
     let headingLevel = Number(heading.replace(/[^0-9]/g, ''));
 
     if (!Number.isFinite(headingLevel) && headingLevel < 1) {
@@ -183,9 +201,14 @@ const getMetadataHeaderTitle = ({ title, heading }) => {
     return [`[h${headingLevel}]${title}[/h${headingLevel}]`];
 };
 
-const getMetadataContent = ({ access, prereq, req, archetype,
+const getMetadataContent = ({
+    access,
+    prereq,
+    req,
+    archetype,
     frequency,
-    trigger, }) => {
+    trigger,
+}) => {
     const lines = [];
 
     //Build remaining strings
