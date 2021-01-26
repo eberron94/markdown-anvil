@@ -11,6 +11,11 @@
             "type": "md-feat-group",
             "files": [
                 "additional-movement",
+                "beast-claw",
+                "beast-hide",
+                "best-claw",
+                "favored-terrain",
+                "relentless-stalker",
                 "beast-form",
                 "beast-sprint",
                 "fast-change",
