@@ -2,6 +2,7 @@
     "outputFolder": "lycanthrope",
     "folderPrefix": "lycanthrope",
     "content": [
+        { "type": "md", "file": "_description" },
         { "type": "md-feat", "file": "dedication" },
         {
             "type": "quote",

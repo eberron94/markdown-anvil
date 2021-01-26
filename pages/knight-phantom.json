@@ -2,6 +2,7 @@
     "outputFolder": "knight-phantom",
     "folderPrefix": "knight-phantom",
     "content": [
+        { "type": "md", "file": "_description" },
         { "type": "md-feat", "file": "dedication" },
         {
             "type": "md-feat-group",

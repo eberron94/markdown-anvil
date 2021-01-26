@@ -2,13 +2,11 @@
     "outputFolder": "detection",
     "folderPrefix": "dragonmark/mark-of-detection",
     "content": [
+        { "type": "md", "file": "_description" },
         { "type": "md-feat", "file": "dedication" },
         {
             "type": "md-feat-group",
             "files": [
-                "./dragonmark/greater-dragonmark",
-                "./dragonmark/grand-dragonmark",
-                "./dragonmark/lesser-dragonmark",
                 "shadow-sight",
                 "dark-sight",
                 "expanded-detection",

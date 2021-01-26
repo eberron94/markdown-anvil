@@ -15,20 +15,20 @@ const main = () => {
 
     pageDataArray.forEach(
         ({ outputFolder, content, footContent, sideContent }) => {
-            if (content)
+            if (content && content.length)
                 saveFile(
                     `./output/${outputFolder}`,
                     'content.txt',
                     content.join('\n\n')
                 );
 
-            if (footContent)
+            if (footContent && footContent.length)
                 saveFile(
                     `./output/${outputFolder}`,
                     'footContent.txt',
                     footContent.join('\n\n')
                 );
-            if (sideContent)
+            if (sideContent && sideContent.length)
                 saveFile(
                     `./output/${outputFolder}`,
                     'sideContent.txt',

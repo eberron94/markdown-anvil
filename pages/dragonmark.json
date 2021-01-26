@@ -1,0 +1,17 @@
+{
+    "outputFolder": "dragonmark",
+    "folderPrefix": "dragonmark",
+    "content": [
+        { "type": "md", "file": "_description" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "lesser-dragonmark",
+                "greater-dragonmark",
+                "grand-dragonmark"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

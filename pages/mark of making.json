@@ -2,22 +2,11 @@
     "outputFolder": "making",
     "folderPrefix": "dragonmark/mark-of-making",
     "content": [
+        { "type": "md", "file": "_description" },
         { "type": "md-feat", "file": "dedication" },
         {
             "type": "md-feat-group",
-            "files": [
-                "./dragonmark/greater-dragonmark",
-                "./dragonmark/grand-dragonmark",
-                "./dragonmark/lesser-dragonmark",
-                "wandslinger",
-                "wand-shot",
-                "wandcrafter",
-                "gentle-overcharging",
-                "wand-flourish",
-                "wand-draw",
-                "advanced-wandcrafter",
-                "aggressive-overcharging"
-            ]
+            "files": []
         }
     ],
     "footContent": [],
