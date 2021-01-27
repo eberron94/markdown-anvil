@@ -188,7 +188,7 @@ const getMetadataFeatTitle = ({
 };
 
 const getMetadataHeaderTitle = ({ title, heading }) => {
-    if(!title){
+    if (!title) {
         return [];
     }
 
@@ -276,11 +276,20 @@ const getMarkdownFeat = data => {
 
 const markdownToWorldAnvil = starStr => {
     let str = starStr.trim();
+
+    str = str.replace(/(\[[^\[]+\]\([^)]*\))/g, (match, i) => {
+        const matches = match.match(/\[([^\[]+)\]\((.*)\)/);
+
+        return `[url=${matches[2]}]${matches[1]}[/url]`;
+    });
+
     str = str.replace(/\*\*\*([^\*\n]+)\*\*\*/g, '[b][i]$1[/i][/b]');
 
     str = str.replace(/\*\*([^\*\n]+)\*\*/g, '[b]$1[/b]');
 
     str = str.replace(/\*([^\*\n]+)\*/g, '[i]$1[/i]');
+
+    str = str.replace(/\\\*/g, '*');
 
     str = str.replace(/\r+\n+/g, '\n');
     str = str.replace(/\xa0+/g, ' ');

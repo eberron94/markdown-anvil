@@ -1,23 +1,24 @@
 {
-    "name": "markdown-anvil",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "run": "node index.js",
-        "clean": "rm -r output"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/eberron94/markdown-anvil.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/eberron94/markdown-anvil/issues"
-    },
-    "homepage": "https://github.com/eberron94/markdown-anvil#readme",
-    "dependencies": {
-        "markdown-yaml-metadata-parser": "^3.0.0"
-    }
+  "name": "markdown-anvil",
+  "version": "1.0.0",
+  "description": "I love World Anvil and its mission. But, they have made some design decisions with their markup language that I do not like that were made for the sake of security. And since they lack an API that allows one to use an external editor and then upload my files, I had to create a solution to let me write my articles the way I want.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js",
+    "clean": "rm -r output"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eberron94/markdown-anvil.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eberron94/markdown-anvil/issues"
+  },
+  "homepage": "https://github.com/eberron94/markdown-anvil#readme",
+  "dependencies": {
+    "markdown-yaml-metadata-parser": "^3.0.0"
+  },
+  "devDependencies": {}
 }
