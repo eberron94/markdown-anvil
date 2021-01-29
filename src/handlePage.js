@@ -294,6 +294,12 @@ const markdownToWorldAnvil = starStr => {
     str = str.replace(/\r+\n+/g, '\n');
     str = str.replace(/\xa0+/g, ' ');
 
+    //Handle Lists
+    str = str.replace(/\n- +([^\n]+)/g, '\n[li]$1[/li]');
+    str = str.replace(/(\[li].+?\[\/li]\n*)+,?/gs, (match)=>{
+        return `[ul]\n${match.trim()}\n[/ul]\n\n`
+    });
+
     str.split('\n')
         .map(e => e.trim())
         .filter(e => e)

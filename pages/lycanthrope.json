@@ -11,7 +11,6 @@
         {
             "type": "md-feat-group",
             "files": [
-                "additional-movement",
                 "beast-claw",
                 "beast-hide",
                 "best-claw",
@@ -23,9 +22,10 @@
                 "lunar-regeneration",
                 "moon-blessing",
                 "raging-beast",
-                "sensitive-ears",
                 "strong-nose",
-                "true-lycanthrope"
+                "hybrid-flight",
+                "hybrid-swim",
+                "hybrid-burrow"
             ]
         }
     ],
@@ -45,5 +45,24 @@
             ]
         }
     ],
-    "sideContent": [{ "type": "md", "file": "more-animals" }]
+    "sideContent": [
+        { "type": "md", "file": "more-animals/index" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "more-animals/badger",
+                "more-animals/bat",
+                "more-animals/bear",
+                "more-animals/bird",
+                "more-animals/boar",
+                "more-animals/cat",
+                "more-animals/crocodile",
+                "more-animals/horse",
+                "more-animals/rat",
+                "more-animals/scorpion",
+                "more-animals/shark",
+                "more-animals/wolf"
+            ]
+        }
+    ]
 }
