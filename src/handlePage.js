@@ -296,8 +296,14 @@ const markdownToWorldAnvil = starStr => {
 
     //Handle Lists
     str = str.replace(/\n- +([^\n]+)/g, '\n[li]$1[/li]');
-    str = str.replace(/(\[li].+?\[\/li]\n*)+,?/gs, (match)=>{
-        return `[ul]\n${match.trim()}\n[/ul]\n\n`
+    str = str.replace(/(\[li].+?\[\/li]\n*)+,?/gs, match => {
+        return `[ul]\n${match.trim()}\n[/ul]\n\n`;
+    });
+
+    str = str.replace(/\| *([^\|\n]+) +/g, '[td]$1[/td]');
+    str = str.replace(/^([^\|\n]+)\|/gm, '[tr]$1[/tr]');
+    str = str.replace(/(\[tr].+?\[\/tr]\n*)+,?/gs, match => {
+        return `[table]\n${match.trim()}\n[/table]\n\n`;
     });
 
     str.split('\n')

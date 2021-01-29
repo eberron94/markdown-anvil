@@ -1,0 +1,24 @@
+{
+    "outputFolder": "lycanthrope-alt",
+    "folderPrefix": "lycanthrope/more-animals",
+    "content": [
+        { "type": "md", "file": "alt" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "badger",
+                "bat",
+                "bear",
+                "bird",
+                "boar",
+                "cat",
+                "crocodile",
+                "horse",
+                "rat",
+                "scorpion",
+                "shark",
+                "wolf"
+            ]
+        }
+    ]
+}

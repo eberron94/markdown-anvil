@@ -33,36 +33,15 @@
         {
             "type": "quote",
             "entries": [
-                { "type": "md-feat", "file": "curse" },
-                { "type": "md-feat", "file": "remove-lycanthropy" }
-            ]
-        },
-        {
-            "type": "quote",
-            "entries": [
                 { "type": "md", "file": "eberron" },
                 { "type": "md-feat", "file": "lesser-moon-frenzy" }
             ]
         }
     ],
     "sideContent": [
+        { "type": "md-feat", "file": "curse" },
+        { "type": "md-feat", "file": "more-animals/wolf" },
         { "type": "md", "file": "more-animals/index" },
-        {
-            "type": "md-feat-group",
-            "files": [
-                "more-animals/badger",
-                "more-animals/bat",
-                "more-animals/bear",
-                "more-animals/bird",
-                "more-animals/boar",
-                "more-animals/cat",
-                "more-animals/crocodile",
-                "more-animals/horse",
-                "more-animals/rat",
-                "more-animals/scorpion",
-                "more-animals/shark",
-                "more-animals/wolf"
-            ]
-        }
+        { "type": "md-feat", "file": "remove-lycanthropy" }
     ]
 }
