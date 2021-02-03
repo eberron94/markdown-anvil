@@ -25,7 +25,8 @@
                 "strong-nose",
                 "hybrid-flight",
                 "hybrid-swim",
-                "hybrid-burrow"
+                "hybrid-burrow",
+                "wild-stride"
             ]
         }
     ],
@@ -34,7 +35,8 @@
             "type": "quote",
             "entries": [
                 { "type": "md", "file": "eberron" },
-                { "type": "md-feat", "file": "lesser-moon-frenzy" }
+                { "type": "md-feat", "file": "lesser-moon-frenzy" },
+                { "type": "md-feat", "file": "eberron-moon" }
             ]
         }
     ],
