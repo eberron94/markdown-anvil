@@ -1,0 +1,16 @@
+{
+    "outputFolder": "gods",
+    "folderPrefix": "gods",
+    "content": [
+        { "type": "md", "file": "index" },
+
+        { "type": "md", "file": "code" },
+        { "type": "md", "file": "anathema" },
+        { "type": "md", "file": "deity/index" },
+        { "type": "md", "file": "deity/undying" },
+        { "type": "md-feat", "file": "deity/touch of undying" },
+        { "type": "md-feat", "file": "deity/energetic sustenance" }
+    ],
+    "footContent": [],
+    "sideContent": [{ "type": "md", "file": "alignment" }]
+}

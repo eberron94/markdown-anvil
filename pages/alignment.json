@@ -1,0 +1,9 @@
+{
+    "outputFolder": "aligment",
+    "folderPrefix": "gods",
+    "content": [
+        { "type": "md", "file": "alignment" }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

@@ -1,7 +1,40 @@
 {
     "outputFolder": "language",
     "folderPrefix": "language",
-    "content": [{ "type": "md", "file": "language" },{ "type": "md-feat", "file": "galifren" }],
+    "content": [
+        { "type": "md", "file": "language" },
+        { "type": "text", "entries": ["[h2]List of Languages[/h2]"] },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "adren",
+                "aeren",
+                "brakia",
+                "daglen",
+                "deep-speech",
+                "eladrin",
+                "elden",
+                "fah",
+                "frosh",
+                "karrnon",
+                "khoravar",
+                "kordian",
+                "kythric",
+                "nessen",
+                "old-brakia",
+                "old-galifar",
+                "phiran",
+                "quor",
+                "riedran",
+                "sarlen",
+                "siberian",
+                "supernal",
+                "volaar",
+                "vvark",
+                "zilsh"
+            ]
+        }
+    ],
     "footContent": [],
     "sideContent": []
 }

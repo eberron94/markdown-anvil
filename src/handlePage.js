@@ -136,7 +136,7 @@ const getMetadataFeatTitle = ({
     const lines = [];
 
     //Build title
-    let featTitle = `[section:feat]${title}`;
+    let featTitle = `[section:feat][h3]${title}[/h3]`;
 
     switch (action) {
         case 'one-action':
@@ -163,6 +163,9 @@ const getMetadataFeatTitle = ({
     featTitle += `[/section]`;
 
     switch (rarity) {
+        case 'common':
+            featTitle += '[section:trait]common[/section]';
+            break;
         case 'uncommon':
             featTitle += '[section:trait-uncommon]uncommon[/section]';
             break;
@@ -180,19 +183,22 @@ const getMetadataFeatTitle = ({
 
     if (Array.isArray(traits) && traits.length) {
         lines.push(
-            traits.map(trait => `[section:trait]${trait}[/section]`).join('')
+            traits
+                .filter(e => e)
+                .map(trait => `[section:trait]${trait}[/section]`)
+                .join('')
         );
     }
 
     return lines.join('');
 };
 
-const getMetadataHeaderTitle = ({ title, heading }) => {
+const getMetadataHeaderTitle = ({ title = '', heading = '' }) => {
     if (!title) {
         return [];
     }
 
-    let headingLevel = Number(heading.replace(/[^0-9]/g, ''));
+    let headingLevel = Number(String(heading).replace(/[^0-9]/g, ''));
 
     if (!Number.isFinite(headingLevel) && headingLevel < 1) {
         headingLevel = 1;
@@ -274,7 +280,7 @@ const getMarkdownFeat = data => {
     return [];
 };
 
-const markdownToWorldAnvil = starStr => {
+const markdownToWorldAnvil = (starStr = '') => {
     let str = starStr.trim();
 
     str = str.replace(/(\[[^\[]+\]\([^)]*\))/g, (match, i) => {
@@ -300,7 +306,13 @@ const markdownToWorldAnvil = starStr => {
         return `[ul]\n${match.trim()}\n[/ul]\n\n`;
     });
 
-    str = str.replace(/\| *([^\|\n]+) +/g, '[td]$1[/td]');
+    // str = str.replace(/\| *th\\([^\|\n]+) +/g, '[th]$1[/th]');
+    // str = str.replace(/\| *([^\|\n]+) +/g, '[td]$1[/td]');
+    str = str.replace(/\| *([^\|\n]+) */g, (_, p1) => {
+        const e = p1.trim().includes('_th_') ? 'th' : 'td';
+        const content = p1.replace('_th_', '');
+        return `[${e}]${content}[/${e}]`;
+    });
     str = str.replace(/^([^\|\n]+)\|/gm, '[tr]$1[/tr]');
     str = str.replace(/(\[tr].+?\[\/tr]\n*)+,?/gs, match => {
         return `[table]\n${match.trim()}\n[/table]\n\n`;
