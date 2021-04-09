@@ -43,17 +43,26 @@ const template = (block, folderPrefix, markdown, json) => {
 
     switch (type) {
         case 'md':
-            const mdFile = markdown[getPath(folderPrefix, file)];
+            const mdFile = {
+                ...markdown[getPath(folderPrefix, file)],
+                filePath: file,
+            };
             lines.push(getMarkdownGeneric(mdFile));
             break;
         case 'md-feat':
-            const mdFeatFile = markdown[getPath(folderPrefix, file)];
+            const mdFeatFile = {
+                ...markdown[getPath(folderPrefix, file)],
+                filePath: file,
+            };
             lines.push(getMarkdownFeat(mdFeatFile));
             break;
         case 'md-group':
         case 'md-feat-group':
             const mdFeatFileList = files
-                .map(f => markdown[getPath(folderPrefix, f)])
+                .map(f => ({
+                    ...markdown[getPath(folderPrefix, f)],
+                    fileName: f,
+                }))
                 .sort(sortFeat);
             if (levelHeaders) {
                 const level20 = new Array(20).fill(0);
@@ -115,7 +124,7 @@ const getPath = (folder, file) => {
     return x;
 };
 
-const sortFeat = ({ metadata: a }, { metadata: b }) => {
+const sortFeat = ({ metadata: a={} }, { metadata: b={} }) => {
     if (typeof a.level === 'number' && typeof b.level === 'number') {
         if (a.level < b.level) return -1;
         if (a.level > b.level) return 1;
@@ -257,7 +266,7 @@ const getMarkdownGeneric = data => {
             '[/p]',
         ];
     } catch (e) {
-        console.log(e.message);
+        console.log(e.message, data);
     }
 
     return [];
@@ -274,7 +283,7 @@ const getMarkdownFeat = data => {
             '[/p]',
         ];
     } catch (e) {
-        console.log(e.message);
+        console.log(e.message, data);
     }
 
     return [];
