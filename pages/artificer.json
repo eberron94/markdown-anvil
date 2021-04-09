@@ -1,0 +1,30 @@
+{
+    "outputFolder": "artificer",
+    "folderPrefix": "artificer",
+    "content": [
+        { "type": "md", "file": "_description" },
+        { "type": "md-feat", "file": "dedication" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "coerce staff",
+                "esoteric insights",
+                "expert spellwright",
+                "halcyon insights",
+                "intuitive master",
+                "intuitive understanding",
+                "legendary spellwright",
+                "pretricked items",
+                "prolific inventor",
+                "scrapper",
+                "spell slinger",
+                "spellwright",
+                "theological insights",
+                "tricked-out",
+                "wand-surge"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": [{ "type": "md-feat", "file": "wand-surge spell" }]
+}
