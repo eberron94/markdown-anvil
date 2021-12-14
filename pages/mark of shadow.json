@@ -1,0 +1,33 @@
+{
+    "outputFolder": "mark of shadow",
+    "folderPrefix": "dragonmarkv2/shadow",
+    "content": [
+        { "type": "md", "file": "_description" },
+        { "type": "md", "file": "feats" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/feats"],
+            "files": ["feat/perform", "feat/stealth"]
+        },
+        { "type": "md", "file": "focus spells" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "spell/grand-spell",
+                "spell/greater-spell",
+                "spell/lesser-spell",
+                "spell/siberys-spell",
+                "spell/veil"
+            ]
+        },
+
+        { "type": "md", "file": "add spells" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/spells"],
+            "files": ["spell/shadow"]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

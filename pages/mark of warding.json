@@ -1,0 +1,32 @@
+{
+    "outputFolder": "mark of warding",
+    "folderPrefix": "dragonmarkv2/warding",
+    "content": [
+        { "type": "md", "file": "_description" },
+        { "type": "md", "file": "feats" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/feats"],
+            "files": ["feat/insight"]
+        },
+        { "type": "md", "file": "focus spells" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "spell/grand-spell",
+                "spell/greater-spell",
+                "spell/lesser-spell",
+                "spell/siberys-spell", "spell/warder"
+            ]
+        },
+
+        { "type": "md", "file": "add spells" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/spells"],
+            "files": ["spell/guard"]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

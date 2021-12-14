@@ -1,20 +1,26 @@
 {
     "outputFolder": "dragonmark",
-    "folderPrefix": "dragonmark/common",
+    "folderPrefix": "dragonmarkv2",
     "content": [
         { "type": "md", "file": "_description" },
+        { "type": "md", "file": "bloodline" },
+        { "type": "md", "file": "feats" },
         {
             "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/feats"],
             "files": [
-                "lesser-dragonmark",
-                "greater-dragonmark",
-                "grand-dragonmark",
-                "mark-of-recovery",
-                "mark-of-twelve-moons",
-                "mark-of-resilience"
             ]
+        },
+        { "type": "md", "file": "focus spells" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/spells"],
+            "files": [ "spell/detect danger"]
         }
     ],
     "footContent": [],
-    "sideContent": []
+    "sideContent": [
+        { "type": "md", "file": "manifesting a mark" },
+        { "type": "md", "file": "traits" }
+    ]
 }

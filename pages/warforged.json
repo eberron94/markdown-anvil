@@ -1,0 +1,41 @@
+{
+    "outputFolder": "warforged",
+    "folderPrefix": "ancestries/warforged",
+    "content": [
+        { "type": "md", "file": "_description" },
+        {
+            "type": "md-feat-group",
+            "levelHeaders": true,
+            "files": [
+                "innate forge",
+                "storage unit",
+                "adamantine tracery",
+                "jaws of death",
+                "superior juggernaut",
+                "battle readiness",
+                "juggernaut function",
+                "warforged bulwark competence",
+                "cold iron tracery",
+                "mithral tracery",
+                "warforged bulwark expertise",
+                "consrtuct resiliency",
+                "nocturnal sentinel",
+                "warforged bulwark",
+                "consrtuct soul",
+                "powerful slam",
+                "warforged lore",
+                "construct body",
+                "sentry vision",
+                "warforged weapon competence",
+                "construct lock",
+                "silver tracery",
+                "warforged weapon expertise",
+                "fall in line",
+                "spiked frame",
+                "warforged weapon familiarity"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": [{ "type": "md", "file": "_key" }]
+}

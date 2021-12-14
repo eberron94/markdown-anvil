@@ -1,0 +1,33 @@
+{
+    "outputFolder": "mark of scribing",
+    "folderPrefix": "dragonmarkv2/scribing",
+    "content": [
+        { "type": "md", "file": "_description" },
+        { "type": "md", "file": "feats" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/feats"],
+            "files": ["feat/scribe", "feat/eye"]
+        },
+        { "type": "md", "file": "focus spells" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "spell/scribe",
+                "spell/grand-spell",
+                "spell/greater-spell",
+                "spell/lesser-spell",
+                "spell/siberys-spell"
+            ]
+        },
+
+        { "type": "md", "file": "add spells" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/spells"],
+            "files": ["spell/relay"]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

@@ -1,33 +1,35 @@
 const { flatten } = require('../util/flatten');
 
-exports.handlePage = (markdown, json) => ({
-    outputFolder,
-    folderPrefix,
-    content: bodyContent = [],
-    footContent = [],
-    sideContent = [],
-}) => {
-    const commonWork = cc => {
-        switch (typeof cc) {
-            case 'string':
-            case 'number':
-                return '' + cc;
-            case 'object':
-                return template(cc, folderPrefix, markdown, json);
-        }
-    };
-
-    const bodyLines = bodyContent.map(cc => commonWork(cc));
-    const footLines = footContent.map(cc => commonWork(cc));
-    const sideLines = sideContent.map(cc => commonWork(cc));
-
-    return {
+exports.handlePage =
+    (markdown, json) =>
+    ({
         outputFolder,
-        content: flatten(bodyLines),
-        footContent: flatten(footLines),
-        sideContent: flatten(sideLines),
+        folderPrefix,
+        content: bodyContent = [],
+        footContent = [],
+        sideContent = [],
+    }) => {
+        const commonWork = cc => {
+            switch (typeof cc) {
+                case 'string':
+                case 'number':
+                    return '' + cc;
+                case 'object':
+                    return template(cc, folderPrefix, markdown, json);
+            }
+        };
+
+        const bodyLines = bodyContent.map(cc => commonWork(cc));
+        const footLines = footContent.map(cc => commonWork(cc));
+        const sideLines = sideContent.map(cc => commonWork(cc));
+
+        return {
+            outputFolder,
+            content: flatten(bodyLines),
+            footContent: flatten(footLines),
+            sideContent: flatten(sideLines),
+        };
     };
-};
 
 const template = (block, folderPrefix, markdown, json) => {
     if (typeof block !== 'object') {
@@ -38,8 +40,31 @@ const template = (block, folderPrefix, markdown, json) => {
         }
         return [];
     }
-    const { type, file, files, entries, levelHeaders = false } = block;
+    const {
+        type,
+        file,
+        files: tempFiles = [],
+        entries,
+        levelHeaders = false,
+        concatFile = [],
+    } = block;
     let lines = [];
+    let files = tempFiles;
+
+    if (Array.isArray(concatFile) && concatFile.length) {
+        concatFile.forEach(cf => {
+            const { content: tempCFArray } = json[cf];
+
+            if (
+                Array.isArray(tempCFArray) &&
+                tempCFArray.length &&
+                Array.isArray(files)
+            ) {
+                files = files.concat(tempCFArray);
+            }
+        });
+
+    }
 
     switch (type) {
         case 'md':
@@ -64,6 +89,7 @@ const template = (block, folderPrefix, markdown, json) => {
                     fileName: f,
                 }))
                 .sort(sortFeat);
+            lines.push('[section:item-container]');
             if (levelHeaders) {
                 const level20 = new Array(20).fill(0);
                 level20.forEach((_, lv) => {
@@ -71,13 +97,19 @@ const template = (block, folderPrefix, markdown, json) => {
                         e => e.metadata.level === lv
                     );
                     if (levelList.length) {
-                        lines.push(`[h2]Level ${lv}[/h2]`);
+                        lines.push(
+                            `[section:level-head]${numToNthString(
+                                lv
+                            )} level[/section]`
+                        );
+
                         lines.push(levelList.map(getMarkdownFeat));
                     }
                 });
             } else {
                 lines.push(mdFeatFileList.map(getMarkdownFeat));
             }
+            lines.push('[/section]');
 
             break;
         case 'json-feat':
@@ -116,6 +148,7 @@ const template = (block, folderPrefix, markdown, json) => {
 };
 
 const getPath = (folder, file) => {
+    if (file.startsWith('/')) return file.replace('/', '');
     let x = `${folder}/${file}`;
     if (file.startsWith('.')) {
         x = file.replace(/\.+\//, '');
@@ -124,10 +157,12 @@ const getPath = (folder, file) => {
     return x;
 };
 
-const sortFeat = ({ metadata: a={} }, { metadata: b={} }) => {
-    if (typeof a.level === 'number' && typeof b.level === 'number') {
-        if (a.level < b.level) return -1;
-        if (a.level > b.level) return 1;
+const sortFeat = ({ metadata: a = {} }, { metadata: b = {} }) => {
+    const aNum = Number(a.level);
+    const bNum = Number(b.level);
+    if (typeof aNum === 'number' && typeof bNum === 'number') {
+        if (aNum < bNum) return -1;
+        if (aNum > bNum) return 1;
     }
     if (a.title < b.title) return -1;
     if (a.title > b.title) return 1;
@@ -145,31 +180,33 @@ const getMetadataFeatTitle = ({
     const lines = [];
 
     //Build title
-    let featTitle = `[section:feat][h3]${title}[/h3]`;
+    let featTitle = `[h3]${title}`;
 
     switch (action) {
         case 'one-action':
-            featTitle += ' [section:one-action][/section]';
+            featTitle += ' [section:one-action] [/section]';
             break;
         case 'two-action':
-            featTitle += ' [section:two-action][/section]';
+            featTitle += ' [section:two-action] [/section]';
             break;
         case 'three-action':
-            featTitle += ' [section:three-action][/section]';
+            featTitle += ' [section:three-action] [/section]';
             break;
         case 'reaction':
-            featTitle += ' [section:reaction][/section]';
+            featTitle += ' [section:reaction] [/section]';
             break;
         case 'free-action':
-            featTitle += ' [section:free-action][/section]';
+            featTitle += ' [section:free-action] [/section]';
             break;
     }
 
-    if (level) {
-        featTitle += `[right]${label} ${level}[/right]`;
+    if (level || level === 0) {
+        featTitle += `[right]${label} ${Math.max(1,level)}[/right]`;
     }
 
-    featTitle += `[/section]`;
+    featTitle += '[/h3]';
+
+    // featTitle += `[/section]`;
 
     switch (rarity) {
         case 'common':
@@ -194,6 +231,7 @@ const getMetadataFeatTitle = ({
         lines.push(
             traits
                 .filter(e => e)
+                .sort()
                 .map(trait => `[section:trait]${trait}[/section]`)
                 .join('')
         );
@@ -202,18 +240,24 @@ const getMetadataFeatTitle = ({
     return lines.join('');
 };
 
-const getMetadataHeaderTitle = ({ title = '', heading = '' }) => {
+const getMetadataHeaderTitle = ({ title = '', heading = '', link ='' }) => {
     if (!title) {
         return [];
     }
 
     let headingLevel = Number(String(heading).replace(/[^0-9]/g, ''));
 
-    if (!Number.isFinite(headingLevel) && headingLevel < 1) {
+    if (!Number.isFinite(headingLevel) && Number(headingLevel) < 1) {
         headingLevel = 1;
     }
 
-    return [`[h${headingLevel}]${title}[/h${headingLevel}]`];
+    let strTitle = title;
+
+    if(link){
+        strTitle = `[url:${link}]${title}[/url]`
+    }
+
+    return [`[h${headingLevel}]${strTitle}[/h${headingLevel}]`];
 };
 
 const getMetadataContent = ({
@@ -262,7 +306,7 @@ const getMarkdownGeneric = data => {
             getMetadataHeaderTitle(metadata),
             '[p]',
             getMetadataContent(metadata),
-            markdownToWorldAnvil(content).trim(),
+            markdownToWorldAnvil(content, metadata).trim(),
             '[/p]',
         ];
     } catch (e) {
@@ -275,12 +319,14 @@ const getMarkdownGeneric = data => {
 const getMarkdownFeat = data => {
     try {
         const { metadata, content } = data;
+        const { type = 'feat' } = metadata;
         return [
-            getMetadataFeatTitle(metadata),
-            '[p]',
+            `[section:item-type ${type}]${getMetadataFeatTitle(metadata)}`,
+            // '[p]',
             getMetadataContent(metadata),
-            markdownToWorldAnvil(content).trim(),
-            '[/p]',
+            markdownToWorldAnvil(content, metadata).trim(),
+            // '[/p]',
+            '[/section]',
         ];
     } catch (e) {
         console.log(e.message, data);
@@ -289,7 +335,7 @@ const getMarkdownFeat = data => {
     return [];
 };
 
-const markdownToWorldAnvil = (starStr = '') => {
+const markdownToWorldAnvil = (starStr = '', { title = '' }) => {
     let str = starStr.trim();
 
     str = str.replace(/(\[[^\[]+\]\([^)]*\))/g, (match, i) => {
@@ -309,6 +355,19 @@ const markdownToWorldAnvil = (starStr = '') => {
     str = str.replace(/\r+\n+/g, '\n');
     str = str.replace(/\xa0+/g, ' ');
 
+    str = str.replace(/\{title\}/g, title);
+    str = str.replace(/\{one-action\}/g, '[section:one-action] [/section]');
+    str = str.replace(/\{two-action\}/g, '[section:two-action] [/section]');
+    str = str.replace(/\{three-action\}/g, '[section:three-action] [/section]');
+    str = str.replace(/\{reaction\}/g, '[section:reaction] [/section]');
+    str = str.replace(/\{free-action\}/g, '[section:free-action] [/section]');
+
+    // Handle Headers
+    str = str.replace(/\n# +([^\n]+)/g, '\n[h1]$1[/h1]');
+    str = str.replace(/\n## +([^\n]+)/g, '\n[h2]$1[/h2]');
+    str = str.replace(/\n### +([^\n]+)/g, '\n[h3]$1[/h3]');
+    str = str.replace(/\n#### +([^\n]+)/g, '\n[h4]$1[/h4]');
+
     //Handle Lists
     str = str.replace(/\n- +([^\n]+)/g, '\n[li]$1[/li]');
     str = str.replace(/(\[li].+?\[\/li]\n*)+,?/gs, match => {
@@ -319,7 +378,7 @@ const markdownToWorldAnvil = (starStr = '') => {
     // str = str.replace(/\| *([^\|\n]+) +/g, '[td]$1[/td]');
     str = str.replace(/\| *([^\|\n]+) */g, (_, p1) => {
         const e = p1.trim().includes('_th_') ? 'th' : 'td';
-        const content = p1.replace('_th_', '');
+        const content = p1.replace('\\_th_', '').replace('_th_', '');
         return `[${e}]${content}[/${e}]`;
     });
     str = str.replace(/^([^\|\n]+)\|/gm, '[tr]$1[/tr]');
@@ -327,10 +386,26 @@ const markdownToWorldAnvil = (starStr = '') => {
         return `[table]\n${match.trim()}\n[/table]\n\n`;
     });
 
+    //Handle HR
+    str = str.replace(/---/g, '[hr]');
+
     str.split('\n')
         .map(e => e.trim())
         .filter(e => e)
         .join('\n\n');
 
     return str;
+};
+
+const numToNthString = num => {
+    switch (Number(num)) {
+        case 1:
+            return '1st';
+        case 2:
+            return '2nd';
+        case 3:
+            return '3rd';
+        default:
+            return num + 'th';
+    }
 };

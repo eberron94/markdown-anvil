@@ -1,0 +1,32 @@
+{
+    "outputFolder": "ancestry",
+    "folderPrefix": "ancestries",
+    "content": [
+        { "type": "md", "file": "_description" },
+        { "type": "md", "file": "common" },
+        { "type": "md", "file": "dwarf/_description-short" },
+        { "type": "md", "file": "elves/_description-short" },
+        {
+            "type": "md-feat-group",
+            "files": ["elves/ancestor"]
+        },
+        { "type": "md", "file": "gnome/_description-short" },
+        { "type": "md", "file": "goblin/_description-short" },
+        { "type": "md", "file": "half-elf/_description-short" },
+        { "type": "md", "file": "half-orc/_description-short" },
+        { "type": "md", "file": "halfling/_description-short" },
+        { "type": "md", "file": "human/_description-short" },
+        { "type": "md", "file": "uncommon" },
+        { "type": "md", "file": "changeling/_description-short" },
+        { "type": "md", "file": "hobgoblin/_description-short" },
+        { "type": "md", "file": "orc/_description-short" },
+        { "type": "md", "file": "shifter/_description-short" },
+        { "type": "md", "file": "warforged/_description-short" },
+        { "type": "md", "file": "kobold/_description-short" },
+        { "type": "md", "file": "rare" },
+        { "type": "md", "file": "catfolk/_description-short" },
+        { "type": "md", "file": "kalashtar/_description-short" }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

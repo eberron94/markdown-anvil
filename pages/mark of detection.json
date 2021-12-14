@@ -1,22 +1,39 @@
 {
-    "outputFolder": "detection",
-    "folderPrefix": "dragonmark/mark-of-detection",
+    "outputFolder": "mark of detection",
+    "folderPrefix": "dragonmarkv2/detection",
     "content": [
         { "type": "md", "file": "_description" },
-        { "type": "md-feat", "file": "dedication" },
+        { "type": "md", "file": "feats" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/feats"],
+            "files": [
+                "feat/eye of medani",
+                "feat/medani prophet",
+                "feat/prophetic vision",
+                "feat/scry sense greater",
+                "feat/scry sense",
+                "feat/vision of the past",
+                "feat/forewarned"
+            ]
+        },
+        { "type": "md", "file": "focus spells" },
         {
             "type": "md-feat-group",
             "files": [
-                "shadow-sight",
-                "dark-sight",
-                "scrying-sense-familiarity",
-                "scrying-sense-competence",
-                "scrying-sense-expert",
-                "medani-prophet",
-                "prophetic-vision",
-                "medani-guidance",
-                "vision-of-the-past"
+                "spell/deductive intuition",
+                "spell/grand-spell",
+                "spell/greater-spell",
+                "spell/lesser-spell",
+                "spell/siberys-spell"
             ]
+        },
+
+        { "type": "md", "file": "add spells" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/spells"],
+            "files": [ "spell/detect danger"]
         }
     ],
     "footContent": [],

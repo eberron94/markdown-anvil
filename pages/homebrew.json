@@ -1,0 +1,25 @@
+{
+    "outputFolder": "house-rule",
+    "folderPrefix": "house-rule",
+    "content": [
+        { "type": "md", "file": "lore" },
+        { "type": "md", "file": "ancestry" },
+        { "type": "md", "file": "free archetype" },
+        
+        { "type": "md", "file": "condition" },
+        { "type": "md", "file": "action" },
+        { "type": "md-feat", "file": "new-actions/taunt" },
+        { "type": "md", "file": "feats" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "new-feats/hurtful words",
+                "new-feats/insightful quip",
+                "new-feats/opening remark",
+                "new-feats/rude motion"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": [{ "type": "md", "file": "free archetype list" }]
+}
