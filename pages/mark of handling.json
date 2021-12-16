@@ -1,0 +1,33 @@
+{
+    "outputFolder": "mark of handling",
+    "folderPrefix": "dragonmarkv2/handling",
+    "content": [
+        { "type": "md", "file": "_description" },
+        { "type": "md", "file": "feats" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/feats"],
+            "files": ["feat/nature", "feat/beast master"]
+        },
+        { "type": "md", "file": "focus spells" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "spell/primal connection",
+                "spell/grand-spell",
+                "spell/greater-spell",
+                "spell/lesser-spell",
+                "spell/siberys-spell"
+            ]
+        },
+
+        { "type": "md", "file": "add spells" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/spells"],
+            "files": ["spell/animal friendship", "spell/feral blessing"]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

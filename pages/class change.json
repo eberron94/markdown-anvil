@@ -1,0 +1,41 @@
+{
+    "outputFolder": "class change",
+    "folderPrefix": "class change",
+    "content": [
+        { "type": "md", "file": "alchemist/_description" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "alchemist/prof",
+                "alchemist/formula book",
+                "alchemist/expert alchemy",
+                "alchemist/research field"
+            ]
+        },
+        { "type": "md", "file": "alchemist/feats" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "alchemist/feat/additional reagents",
+                "alchemist/feat/calculated trajectory"
+            ]
+        },
+        { "type": "md", "file": "sorcerer/_description" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "sorcerer/spell snipe"
+            ]
+        },
+        { "type": "md", "file": "swashbuckler/_description" },
+        { "type": "md", "file": "wizard/_description" },
+        { "type": "md-feat", "file": "wizard/shared metamagic" },
+        { "type": "md-feat", "file": "wizard/metacasting stance" },
+        "[quote]",
+        { "type": "md-feat", "file": "wizard/metacasting stance spell" },
+        "[/quote]",
+        { "type": "md-feat", "file": "wizard/experiment" }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

@@ -54,6 +54,7 @@ exports.readJsonContentFilesSync = (dir) => {
         .forEach(({ filepath }) => {
             console.log('found', filepath);
             const raw = fs.readFileSync(filepath);
+            console.log(JSON.parse(raw));
             const { metadata = {}, content: json } = JSON.parse(raw);
 
             const startIndex = filepath.lastIndexOf('content');

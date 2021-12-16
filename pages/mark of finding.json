@@ -1,0 +1,40 @@
+{
+    "outputFolder": "mark of finding",
+    "folderPrefix": "dragonmarkv2/finding",
+    "content": [
+        { "type": "md", "file": "_description" },
+        { "type": "md", "file": "feats" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/feats"],
+            "files": [
+                "feat/survival",
+                "feat/trap warden",
+                "feat/track the trackless",
+                "feat/perfect awareness",
+                "feat/duraakash insight",
+                "feat/duraakash"
+            ]
+        },
+        { "type": "md", "file": "focus spells" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "spell/seeker intuition",
+                "spell/grand-spell",
+                "spell/greater-spell",
+                "spell/lesser-spell",
+                "spell/siberys-spell"
+            ]
+        },
+
+        { "type": "md", "file": "add spells" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/spells"],
+            "files": [ "spell/eyes of the finder"]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}

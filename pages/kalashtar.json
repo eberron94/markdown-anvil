@@ -1,0 +1,28 @@
+{
+    "outputFolder": "kalashtar",
+    "folderPrefix": "ancestries/kalashtar",
+    "content": [
+        { "type": "md", "file": "_description" },
+        { "type": "md-feat", "file": "mind link" },
+        {
+            "type": "md-feat-group",
+            "levelHeaders": true,
+            "files": [
+                "amp",
+                "better link",
+                "desire",
+                "dual mind",
+                "focus",
+                "greater sense",
+                "leader",
+                "lore",
+                "mind blades",
+                "rapport",
+                "telepath affinity",
+                "thought sense"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": [{ "type": "md", "file": "_key" }]
+}

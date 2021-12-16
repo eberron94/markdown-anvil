@@ -1,0 +1,16 @@
+{
+    "outputFolder": "vehicle",
+    "folderPrefix": "vehicle",
+    "content": [
+        { "type": "md", "file": "_description" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "tumbler",
+                "earth sled"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": [{ "type": "md", "file": "_key" }]
+}

@@ -1,18 +1,35 @@
 {
-    "outputFolder": "making",
-    "folderPrefix": "dragonmark/mark-of-making",
+    "outputFolder": "mark of making",
+    "folderPrefix": "dragonmarkv2/making",
     "content": [
         { "type": "md", "file": "_description" },
-        { "type": "md-feat", "file": "dedication" },
+        { "type": "md", "file": "feats" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/feats"],
+            "files": [
+                "feat/crafting",
+                "feat/armor work",
+                "feat/grinding strike"
+            ]
+        },
+        { "type": "md", "file": "focus spells" },
         {
             "type": "md-feat-group",
             "files": [
-                "armor-work",
-                "forgecraft",
-                "grinding-strike",
-                "mech-reaper",
-                "tear-apart"
+                "spell/gift",
+                "spell/grand-spell",
+                "spell/greater-spell",
+                "spell/lesser-spell",
+                "spell/siberys-spell"
             ]
+        },
+
+        { "type": "md", "file": "add spells" },
+        {
+            "type": "md-feat-group",
+            "concatFile": ["dragonmarkv2/spells"],
+            "files": ["spell/savant", "spell/remake"]
         }
     ],
     "footContent": [],

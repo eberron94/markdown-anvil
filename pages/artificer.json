@@ -26,5 +26,8 @@
         }
     ],
     "footContent": [],
-    "sideContent": [{ "type": "md-feat", "file": "wand-surge spell" }]
+    "sideContent": [
+        { "type": "md-feat", "file": "no need for tricks" },
+        { "type": "md-feat", "file": "wand-surge spell" }
+    ]
 }

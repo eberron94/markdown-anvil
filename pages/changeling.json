@@ -1,0 +1,38 @@
+{
+    "outputFolder": "changeling",
+    "folderPrefix": "ancestries/changeling",
+    "content": [
+        { "type": "md", "file": "_description" },
+        { "type": "md-feat", "file": "shift" },
+        { "type": "md", "file": "heritage" },
+
+        {
+            "type": "md-feat-group",
+            "levelHeaders": true,
+            "files": [
+                "emotional empathy",
+                "shapeshift intuition",
+                "amorphus",
+                "lore",
+                "skin cant",
+                "aquatic adaptation",
+                "mimic",
+                "skin glider",
+                "camoflauge",
+                "mind of the traveler",
+                "terrifying shift",
+                "clawed adaptation",
+                "personable performer",
+                "traveler gift",
+                "climbing adaptation",
+                "rapid regen",
+                "traveler protection",
+                "deep shift",
+                "rapid shift",
+                "wellversed traveler"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": []
+}
