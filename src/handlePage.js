@@ -267,6 +267,8 @@ const getMetadataContent = ({
     archetype,
     frequency,
     trigger,
+    price,
+    bulk
 }) => {
     const lines = [];
 
@@ -294,6 +296,14 @@ const getMetadataContent = ({
 
     if (req && typeof req === 'string') {
         lines.push(`[b]Requirement[/b] ${req}`);
+    }
+
+    if (price && Number(price)) {
+        lines.push(`[b]Price[/b] ${Number(price).toLocaleString()} gp`);
+    }
+
+    if (bulk && typeof bulk === 'string') {
+        lines.push(`[b]Bulk[/b] ${bulk}`);
     }
 
     return lines;
