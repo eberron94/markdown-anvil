@@ -23,9 +23,7 @@
         { "type": "md", "file": "sorcerer/_description" },
         {
             "type": "md-feat-group",
-            "files": [
-                "sorcerer/spell snipe"
-            ]
+            "files": ["sorcerer/spell snipe"]
         },
         { "type": "md", "file": "swashbuckler/_description" },
         { "type": "md", "file": "wizard/_description" },
@@ -34,7 +32,18 @@
         "[quote]",
         { "type": "md-feat", "file": "wizard/metacasting stance spell" },
         "[/quote]",
-        { "type": "md-feat", "file": "wizard/experiment" }
+        { "type": "md-feat", "file": "wizard/experiment" },
+        { "type": "md", "file": "trick driver/_description" },
+        { "type": "md-feat", "file": "trick driver/trick" },
+        { "type": "md", "file": "vehicle mechanic/_description" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "vehicle mechanic/propulsion",
+                "vehicle mechanic/work with me",
+                "vehicle mechanic/work with us"
+            ]
+        }
     ],
     "footContent": [],
     "sideContent": []
