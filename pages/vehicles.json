@@ -6,7 +6,12 @@
         {
             "type": "md-feat-group",
             "files": [
+                "evocarrus",
+                "khybercarrus",
                 "tumbler",
+                "airship",
+                "lightning rail",
+                "elemental galleon",
                 "earth sled"
             ]
         }

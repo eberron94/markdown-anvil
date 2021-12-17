@@ -1,0 +1,20 @@
+{
+    "outputFolder": "magic item",
+    "folderPrefix": "magic item",
+    "content": [
+        { "type": "md", "file": "_description" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "astral beacon",
+                "bag of bounty",
+                "braclet of comfort",
+                "lightning reins",
+                "soarsled",
+                "wheel of wind and water"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": [{ "type": "md", "file": "_key" }]
+}
