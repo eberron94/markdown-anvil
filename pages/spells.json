@@ -1,0 +1,15 @@
+{
+    "outputFolder": "spells",
+    "folderPrefix": "spells",
+    "content": [
+        { "type": "md", "file": "_description" },
+        {
+            "type": "md-feat-group",
+            "files": [
+                "agile craft"
+            ]
+        }
+    ],
+    "footContent": [],
+    "sideContent": [{ "type": "md", "file": "_key" }]
+}

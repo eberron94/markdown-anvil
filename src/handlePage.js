@@ -251,6 +251,8 @@ const getMetadataHeaderTitle = ({ title = '', heading = '', link ='' }) => {
         headingLevel = 1;
     }
 
+    if(headingLevel === 0) return [];
+
     let strTitle = title;
 
     if(link){
